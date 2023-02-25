@@ -48,7 +48,7 @@ get_header();
 						if ($loop->have_posts()) {
 							while ($loop->have_posts()) : $loop->the_post();
 						?>
-								<div class="col-md-4 col-xs-6">
+								<div class="col-md-3 col-xs-6">
 									<div class="product">
 										<?php wc_get_template_part('content', 'product'); ?>
 									</div>
