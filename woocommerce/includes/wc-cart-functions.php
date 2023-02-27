@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 
- function wc_add_to_cart_message( $products, $show_qty = false, $return = false ) {
+function wc_add_to_cart_message( $products, $show_qty = false, $return = false ) {
 	$titles = array();
 	$count  = 0;
 

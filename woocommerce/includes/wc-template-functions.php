@@ -64,3 +64,34 @@ if ( ! function_exists( 'woocommerce_related_products' ) ) {
 		wc_get_template( 'single-product/related.php', $args );
 	}
 }
+if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
+
+	/**
+	 * Show the product title in the product loop. By default this is an H2.
+	 */
+	function woocommerce_template_loop_product_title() {
+		echo '<h3 class="product-name ' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h3>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+}
+if ( ! function_exists( 'woocommerce_template_loop_category_title' ) ) {
+
+	/**
+	 * Show the subcategory title in the product loop.
+	 *
+	 * @param object $category Category object.
+	 */
+	function woocommerce_template_loop_category_title( $category ) {
+		?>
+		<p class="product-category woocommerce-loop-category__title">
+			<?php
+			echo esc_html( $category->name );
+
+			if ( $category->count > 0 ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . esc_html( $category->count ) . ')</mark>', $category );
+			}
+			?>
+		</p>
+		<?php
+	}
+}

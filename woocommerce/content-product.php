@@ -24,7 +24,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
@@ -60,6 +59,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	// do_action( 'woocommerce_shop_loop_item_title' );
 	?>
 	<div class="product-body">
+		<?php
+		
+		?>
 	<div class="product-name">
 		<?php
 	woocommerce_template_loop_product_title();
@@ -68,13 +70,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	<div class="product-price">
 	<?php
 	woocommerce_template_loop_price();
-	?>
-	</div>
-	<div class="product-rating">
-		<?php
 	woocommerce_template_loop_rating();
 	?>
-	</div>
 	</div>
 		<div class="add-to-cart">
 		<?php

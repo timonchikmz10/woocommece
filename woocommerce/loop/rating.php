@@ -24,5 +24,11 @@ global $product;
 if ( ! wc_review_ratings_enabled() ) {
 	return;
 }
-
+echo wc_get_product_category_list( $product->get_id(), ', ', '<p class="product-category posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</p>' ); 
+?>
+</div>
+<div class="product-rating">
+	<?php
 echo wc_get_rating_html( $product->get_average_rating() ); // WordPress.XSS.EscapeOutput.OutputNotEscaped.
+?>
+</div>

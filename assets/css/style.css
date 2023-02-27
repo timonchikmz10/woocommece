@@ -1248,7 +1248,10 @@ background-color: #b3b7fb;
 /*----------------------------*\
 	product
 \*----------------------------*/
-
+.col-md-3 .product .product-img>img{
+  width: 100%;
+  height: auto;
+}
 .col-md-3 .product {
   position: relative;
   margin: 0px 0px;
