@@ -3,7 +3,12 @@
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
-
+// add_action( 'woocommerce_before_main_content', 'autozone_add_sidebar_only_archive', 100 );
+// function autozone_add_sidebar_only_archive() {
+// 	if ( ! is_product() ) {
+// 		woocommerce_get_sidebar();
+// 	}
+// }
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 add_action('woocommerce_before_main_content', 'autozone_add_breadcrumbs', 20);
 function autozone_add_breadcrumbs()

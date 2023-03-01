@@ -23,17 +23,8 @@ get_header();
 			<!-- row -->
 			<div class="row">
 				<!-- ASIDE -->
-				<div id="aside" class="col-md-3">
-					<!-- aside Widget -->
-					<div class="aside">
-						<div class="checkbox-filter">
-							<?php get_sidebar(); ?>
-							<?php if (is_active_sidebar('sidebar-2')) : ?>
-								<?php dynamic_sidebar('sidebar-2'); ?>
-							<?php endif; ?>
-						</div>
-					</div>
-				</div>
+						<?php get_sidebar();?>
+				
 				<div id="store" class="col-md-9">
 					<!-- store top filter -->
 					<div class="row">
@@ -42,7 +33,7 @@ get_header();
 
 						$args = array(
 							'post_type' => 'product',
-							'posts_per_page' => 21
+							'posts_per_page' => 20
 						);
 						$loop = new WP_Query($args);
 						if ($loop->have_posts()) {
@@ -69,7 +60,6 @@ get_header();
 		</div>
 	</div>
 	</div>
-
 </main><!-- #main -->
 <div id="newsletter" class="section">
 	<!-- container -->
@@ -77,11 +67,12 @@ get_header();
 		<!-- row -->
 		<div class="row">
 			<div class="col-md-12">
+	
 				<div class="newsletter">
-					<p>Sign Up for the <strong>NEWSLETTER</strong></p>
 					<form>
-						<input class="input" type="email" placeholder="Enter Your Email">
-						<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+					<a class="btn-more" href="<?php echo home_url('/shop');?>">
+					Більше товарів
+					</a>
 					</form>
 					<ul class="newsletter-follow">
 						<?php if ($GLOBALS['autozone']['facebook']) : ?>

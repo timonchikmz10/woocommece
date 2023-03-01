@@ -10,19 +10,15 @@
 
 get_header();
 ?>
-<div class="container single-section">
-	<div class="w3ls_mobiles_grids">
-		<div id="primary" class="content-area col-md-8 w3ls_mobiles_grid_left">
-			<main id="primary" class="site-main">
-
+<div class="section">
+	<div class="container">
+	<div class="row">
+	<?php get_sidebar(); ?>
+			<div id="store" class="col-md-9">
+				<div class="row">
 				<?php if (have_posts()) : ?>
 
-					<header class="page-header">
-						<?php
-						the_archive_title('<h1 class="page-title">', '</h1>');
-						the_archive_description('<div class="archive-description">', '</div>');
-						?>
-					</header><!-- .page-header -->
+				
 
 				<?php
 					/* Start the Loop */
@@ -46,11 +42,10 @@ get_header();
 
 				endif;
 				?>
-
-			</main><!-- #main -->
-		</div>
-		<?php get_sidebar(); ?>
-	</div>
+				</div>
+					</div>
+</div>
+</div>
 </div>
 <?php
 get_footer();
